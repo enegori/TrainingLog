@@ -13,12 +13,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var mainViewC: UITableView!
     
-    let trainingTitle: NSArray = []
+    let trainingTitle: NSArray = ["1","2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewC.delegate = self
         mainViewC.dataSource = self
+        
+        // Table Viewの背景色
+        mainViewC.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
+        
+        // Viewの背景色
+        self.view.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
         
         // NavigationBarの生成
         let navBar: UINavigationBar = UINavigationBar()
@@ -38,6 +44,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+    // cellが選択された際に呼び出されるdelegateメソッド
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("Num: \(indexPath.row)")
+        print("Value: \(trainingTitle[indexPath.row])")
+    }
     
+    // cellの総数を返すメソッド
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return trainingTitle.count
+    }
     
+    // cellに値を設定するデータベースメソッド
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // 再利用するcellの取得
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        // cellに値を設定する
+        cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
+        cell.textLabel!.text = "test"
+        return cell
+    }
 }
