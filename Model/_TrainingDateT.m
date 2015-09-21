@@ -40,11 +40,6 @@ const struct TrainingDateTAttributes TrainingDateTAttributes = {
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
-	if ([key isEqualToString:@"trainingIDValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"trainingID"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
 
 	return keyPaths;
 }
@@ -72,24 +67,6 @@ const struct TrainingDateTAttributes TrainingDateTAttributes = {
 }
 
 @dynamic trainingID;
-
-- (int16_t)trainingIDValue {
-	NSNumber *result = [self trainingID];
-	return [result shortValue];
-}
-
-- (void)setTrainingIDValue:(int16_t)value_ {
-	[self setTrainingID:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveTrainingIDValue {
-	NSNumber *result = [self primitiveTrainingID];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveTrainingIDValue:(int16_t)value_ {
-	[self setPrimitiveTrainingID:[NSNumber numberWithShort:value_]];
-}
 
 @end
 

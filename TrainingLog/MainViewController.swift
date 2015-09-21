@@ -13,7 +13,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var mainViewC: UITableView!
     
-    let trainingTitle: NSArray = ["1","2"]
+    let trainingInfoM: NSArray = ["1","2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +49,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // cellが選択された際に呼び出されるdelegateメソッド
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Num: \(indexPath.row)")
-        print("Value: \(trainingTitle[indexPath.row])")
+        print("Value: \(trainingInfoM[indexPath.row])")
     }
     
     // cellの総数を返すメソッド
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trainingTitle.count
+        return trainingInfoM.count
     }
     
     // cellに値を設定するデータベースメソッド
@@ -65,5 +65,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
 //        cell.textLabel!.text = "test"
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showRegister"{
+            let indexPath = mainViewC.indexPathForSelectedRow
+            let trainingInfoT: AddTrainingCountView = segue.destinationViewController as! AddTrainingCountView
+            trainingInfoT.trainingId = trainingInfoM[indexPath!.row] as? String
+        }
     }
 }

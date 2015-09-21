@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-class AddTrainingCountView: UIViewController, UIPickerViewDelegate {
+class AddTrainingCountView: UIViewController {
+    
+    // 今日の回数
+    @IBOutlet weak var numericValue: UITextField!
+    
+    var trainingId: String?
     
     //Modal閉じる用のメソッド
     func closeBtn(){
@@ -30,7 +35,6 @@ class AddTrainingCountView: UIViewController, UIPickerViewDelegate {
         let navTitle: UINavigationItem = UINavigationItem(title: "回数の追加")
         let closeModal: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "closeBtn")
         navTitle.leftBarButtonItem = closeModal
-        // 登録ボタンは後で設定
         navTitle.rightBarButtonItem = UIBarButtonItem(title: "登録", style: .Plain, target: self, action: "registerBtn")
         navBar.pushNavigationItem(navTitle, animated: true)
         self.view.addSubview(navBar)
@@ -38,8 +42,12 @@ class AddTrainingCountView: UIViewController, UIPickerViewDelegate {
     }
     
     func registerBtn(){
-//        var trainingDateT: TrainingDateT = TrainingDateT()
-        
+        var trainingDateT = TrainingDateT.MR_createEntity()
+        trainingDateT.dateInfo = NSDate()
+        trainingDateT.numericValue = Int(numericValue.text!)
+        trainingDateT.trainingID = trainingId
+        trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

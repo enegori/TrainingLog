@@ -10,3 +10,4 @@
 #import "TrainingInfoM.h"
 #import "TrainingDateT.h"
 #import "UnitInfoM.h"
+#import "MagicalRecord/MagicalRecord.h"
