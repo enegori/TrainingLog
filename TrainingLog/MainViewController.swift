@@ -20,6 +20,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         mainViewC.delegate = self
         mainViewC.dataSource = self
         
+        //self.mainViewC.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        
         // Table Viewの背景色
         mainViewC.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
         
@@ -58,10 +60,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // cellに値を設定するデータベースメソッド
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 再利用するcellの取得
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomCell
         // cellに値を設定する
         cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
-        cell.textLabel!.text = "test"
+//        cell.textLabel!.text = "test"
         return cell
     }
 }

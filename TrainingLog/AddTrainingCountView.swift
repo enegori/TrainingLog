@@ -31,9 +31,14 @@ class AddTrainingCountView: UIViewController, UIPickerViewDelegate {
         let closeModal: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Stop, target: self, action: "closeBtn")
         navTitle.leftBarButtonItem = closeModal
         // 登録ボタンは後で設定
-        navTitle.rightBarButtonItem = UIBarButtonItem(title: "登録", style: .Plain, target: self, action: nil)
+        navTitle.rightBarButtonItem = UIBarButtonItem(title: "登録", style: .Plain, target: self, action: "registerBtn")
         navBar.pushNavigationItem(navTitle, animated: true)
         self.view.addSubview(navBar)
+        
+    }
+    
+    func registerBtn(){
+//        var trainingDateT: TrainingDateT = TrainingDateT()
         
     }
     

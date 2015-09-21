@@ -16,6 +16,8 @@
 		507407821B7E3E5400D231A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507407801B7E3E5400D231A5 /* LaunchScreen.xib */; };
 		5074078E1B7E3E5400D231A5 /* TrainingLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074078D1B7E3E5400D231A5 /* TrainingLogTests.swift */; };
 		50B00DF51BA42EFE00CEB9BC /* AddTrainingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */; };
+		50EA12091BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */; settings = {ASSET_TAGS = (); }; };
+		50EA120B1BB00E75001FD8BE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA120A1BB00E75001FD8BE /* CustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		50F125191B7E559D0026BC95 /* ForBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F125181B7E559D0026BC95 /* ForBridge.m */; };
 		50F125321B7E5D650026BC95 /* _TrainingDateT.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F125271B7E5D650026BC95 /* _TrainingDateT.m */; };
 		50F125341B7E5D650026BC95 /* _UnitInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1252B1B7E5D650026BC95 /* _UnitInfoM.m */; };
@@ -50,6 +52,8 @@
 		5074078C1B7E3E5400D231A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5074078D1B7E3E5400D231A5 /* TrainingLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingLogTests.swift; sourceTree = "<group>"; };
 		50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTrainingCountView.swift; sourceTree = "<group>"; };
+		50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2015-09-21 19.04.58.png"; sourceTree = "<group>"; };
+		50EA120A1BB00E75001FD8BE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		50F125181B7E559D0026BC95 /* ForBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForBridge.m; sourceTree = "<group>"; };
 		50F125261B7E5D650026BC95 /* _TrainingDateT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TrainingDateT.h; sourceTree = "<group>"; };
 		50F125271B7E5D650026BC95 /* _TrainingDateT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TrainingDateT.m; sourceTree = "<group>"; };
@@ -119,9 +123,11 @@
 				50F125091B7E54430026BC95 /* Model */,
 				507407741B7E3E5400D231A5 /* AppDelegate.swift */,
 				50F125381B7E64900026BC95 /* MainViewController.swift */,
-				5074077B1B7E3E5400D231A5 /* Main.storyboard */,
+				50EA120A1BB00E75001FD8BE /* CustomCell.swift */,
 				50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */,
+				5074077B1B7E3E5400D231A5 /* Main.storyboard */,
 				5074077E1B7E3E5400D231A5 /* Images.xcassets */,
+				50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */,
 				507407801B7E3E5400D231A5 /* LaunchScreen.xib */,
 				507407761B7E3E5400D231A5 /* TrainingLog.xcdatamodeld */,
 				507407721B7E3E5400D231A5 /* Supporting Files */,
@@ -268,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5074077D1B7E3E5400D231A5 /* Main.storyboard in Resources */,
+				50EA12091BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png in Resources */,
 				507407821B7E3E5400D231A5 /* LaunchScreen.xib in Resources */,
 				5074077F1B7E3E5400D231A5 /* Images.xcassets in Resources */,
 			);
@@ -330,6 +337,7 @@
 				50F125371B7E5D650026BC95 /* UnitInfoM.m in Sources */,
 				506480701BA43E5800406687 /* _TrainingInfoM.m in Sources */,
 				50F125341B7E5D650026BC95 /* _UnitInfoM.m in Sources */,
+				50EA120B1BB00E75001FD8BE /* CustomCell.swift in Sources */,
 				507407751B7E3E5400D231A5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
