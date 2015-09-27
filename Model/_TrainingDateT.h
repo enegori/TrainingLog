@@ -5,7 +5,7 @@
 
 extern const struct TrainingDateTAttributes {
 	__unsafe_unretained NSString *dateInfo;
-	__unsafe_unretained NSString *numericValue;
+	__unsafe_unretained NSString *numData;
 	__unsafe_unretained NSString *trainingID;
 } TrainingDateTAttributes;
 
@@ -22,13 +22,13 @@ extern const struct TrainingDateTAttributes {
 
 //- (BOOL)validateDateInfo:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* numericValue;
+@property (nonatomic, strong) NSNumber* numData;
 
-@property (atomic) float numericValueValue;
-- (float)numericValueValue;
-- (void)setNumericValueValue:(float)value_;
+@property (atomic) float numDataValue;
+- (float)numDataValue;
+- (void)setNumDataValue:(float)value_;
 
-//- (BOOL)validateNumericValue:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateNumData:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* trainingID;
 
@@ -41,11 +41,11 @@ extern const struct TrainingDateTAttributes {
 - (NSDate*)primitiveDateInfo;
 - (void)setPrimitiveDateInfo:(NSDate*)value;
 
-- (NSNumber*)primitiveNumericValue;
-- (void)setPrimitiveNumericValue:(NSNumber*)value;
+- (NSNumber*)primitiveNumData;
+- (void)setPrimitiveNumData:(NSNumber*)value;
 
-- (float)primitiveNumericValueValue;
-- (void)setPrimitiveNumericValueValue:(float)value_;
+- (float)primitiveNumDataValue;
+- (void)setPrimitiveNumDataValue:(float)value_;
 
 - (NSString*)primitiveTrainingID;
 - (void)setPrimitiveTrainingID:(NSString*)value;

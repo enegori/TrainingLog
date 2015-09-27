@@ -12,13 +12,14 @@ import Foundation
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var mainViewC: UITableView!
-    
-    let trainingInfoM: NSArray = ["1","2"]
+    var trainingInfoList:[TrainingDataInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewC.delegate = self
         mainViewC.dataSource = self
+        //
+        getList()
         
         //self.mainViewC.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
         
@@ -49,12 +50,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // cellが選択された際に呼び出されるdelegateメソッド
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Num: \(indexPath.row)")
-        print("Value: \(trainingInfoM[indexPath.row])")
+//        print("Value: \(trainingInfoM[indexPath.row])")
     }
     
     // cellの総数を返すメソッド
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trainingInfoM.count
+        return trainingInfoList.count
     }
     
     // cellに値を設定するデータベースメソッド
@@ -63,15 +64,38 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell: CustomCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! CustomCell
         // cellに値を設定する
         cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
-//        cell.textLabel!.text = "test"
-        return cell
+        cell.trainingName.text = trainingInfoList[indexPath.row].trainingName
+//           cell.backImg.image = trainingInfoList[i].imageName as? UIImage
+        cell.totalCount.text = String(trainingInfoList[indexPath.row].numericValue)
+            return cell
+    }
+    
+    func getList(){
+        let trainingDataByDate = TrainingDateT.MR_findAllSortedBy("dateInfo", ascending: true)
+        var dict = [String:Float]()
+        for var i = 0; i < trainingDataByDate.count; i++ {
+            let trainingRecord = trainingDataByDate[i]
+            if dict[trainingRecord.trainingID] != nil {
+                dict[trainingRecord.trainingID] = trainingRecord.numDataValue + dict[trainingRecord.trainingID]!
+            } else {
+                dict[trainingRecord.trainingID] = trainingRecord.numDataValue
+            }
+        }
+        let keys: Array = Array(dict.keys)
+        let trainingDataList = TrainingInfoM.MR_findByAttribute("trainingName","unitID","backImg", withValue: )
+        for var i = 0; i < keys.count; i++ {
+            trainingInfoList.append(TrainingDataInfo(data:(keys[i],"a",1,"q")))
+//            trainingInfoList[i].numericValue = dict[]
+//            trainingInfoList[i].numericValue = dict[trainingRecord.trainingID]
+//            trainingInfoList[i].trainingID = trainingRecord.trainingID
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showRegister"{
             let indexPath = mainViewC.indexPathForSelectedRow
             let trainingInfoT: AddTrainingCountView = segue.destinationViewController as! AddTrainingCountView
-            trainingInfoT.trainingId = trainingInfoM[indexPath!.row] as? String
+            trainingInfoT.trainingId = trainingInfoList[indexPath!.row] as? String
         }
     }
 }

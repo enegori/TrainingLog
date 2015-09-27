@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Initialize TrainingInfoM
-        if let csvPath = NSBundle.mainBundle().pathForResource("TrainingData", ofType: "csv") {
+        if let csvPath = NSBundle.mainBundle().pathForResource("TrainingInfo", ofType: "csv") {
             var csvString:String = ""
             do{
                 csvString = try NSString(contentsOfFile: csvPath, encoding: NSUTF8StringEncoding) as String
@@ -67,6 +67,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 trainingInfoM.managedObjectContext?.MR_saveToPersistentStoreAndWait()
             }
         }
+        
+        // Initialize TrainingInfoT
+        if let csvPath = NSBundle.mainBundle().pathForResource("TrainingDate", ofType: "csv") {
+            var csvString:String = ""
+            do{
+                csvString = try NSString(contentsOfFile: csvPath, encoding: NSUTF8StringEncoding) as String
+            }catch {
+                print("エラーなんだが...")
+            }
+            csvString.enumerateLines { (line, stop) -> () in
+                var result = (line.componentsSeparatedByString(","))
+                var trainingDateT = TrainingDateT.MR_createEntity()
+                trainingDateT.dateInfo = NSDate()
+                trainingDateT.numDataValue = 0
+                trainingDateT.trainingID = result[0]
+                trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+            }
+        }
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

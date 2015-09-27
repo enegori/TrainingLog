@@ -76,7 +76,7 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
     func registerBtn(){
         var trainingDateT = TrainingDateT.MR_createEntity()
         trainingDateT.dateInfo = NSDate()
-        trainingDateT.numericValue = Int(numericValue.text!)
+        trainingDateT.numDataValue = Float(numericValue.text!)!
         trainingDateT.trainingID = trainingId
         trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
         self.dismissViewControllerAnimated(true, completion: nil)

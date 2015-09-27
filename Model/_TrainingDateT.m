@@ -5,7 +5,7 @@
 
 const struct TrainingDateTAttributes TrainingDateTAttributes = {
 	.dateInfo = @"dateInfo",
-	.numericValue = @"numericValue",
+	.numData = @"numData",
 	.trainingID = @"trainingID",
 };
 
@@ -35,8 +35,8 @@ const struct TrainingDateTAttributes TrainingDateTAttributes = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"numericValueValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"numericValue"];
+	if ([key isEqualToString:@"numDataValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"numData"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
@@ -46,24 +46,24 @@ const struct TrainingDateTAttributes TrainingDateTAttributes = {
 
 @dynamic dateInfo;
 
-@dynamic numericValue;
+@dynamic numData;
 
-- (float)numericValueValue {
-	NSNumber *result = [self numericValue];
+- (float)numDataValue {
+	NSNumber *result = [self numData];
 	return [result floatValue];
 }
 
-- (void)setNumericValueValue:(float)value_ {
-	[self setNumericValue:[NSNumber numberWithFloat:value_]];
+- (void)setNumDataValue:(float)value_ {
+	[self setNumData:[NSNumber numberWithFloat:value_]];
 }
 
-- (float)primitiveNumericValueValue {
-	NSNumber *result = [self primitiveNumericValue];
+- (float)primitiveNumDataValue {
+	NSNumber *result = [self primitiveNumData];
 	return [result floatValue];
 }
 
-- (void)setPrimitiveNumericValueValue:(float)value_ {
-	[self setPrimitiveNumericValue:[NSNumber numberWithFloat:value_]];
+- (void)setPrimitiveNumDataValue:(float)value_ {
+	[self setPrimitiveNumData:[NSNumber numberWithFloat:value_]];
 }
 
 @dynamic trainingID;
