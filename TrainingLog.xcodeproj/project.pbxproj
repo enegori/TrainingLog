@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		26B20F331A2735CBA89B8696 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D61CC59F5C8B5F5D560C751F /* libPods.a */; };
-		501A6E321BB035AB00CA80B0 /* _TrainingInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 501A6E311BB035AB00CA80B0 /* _TrainingInfoM.m */; settings = {ASSET_TAGS = (); }; };
-		501A6E351BB035BC00CA80B0 /* _TrainingDateT.m in Sources */ = {isa = PBXBuildFile; fileRef = 501A6E341BB035BC00CA80B0 /* _TrainingDateT.m */; settings = {ASSET_TAGS = (); }; };
 		507407751B7E3E5400D231A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507407741B7E3E5400D231A5 /* AppDelegate.swift */; };
 		507407781B7E3E5400D231A5 /* TrainingLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 507407761B7E3E5400D231A5 /* TrainingLog.xcdatamodeld */; };
 		5074077D1B7E3E5400D231A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5074077B1B7E3E5400D231A5 /* Main.storyboard */; };
 		5074077F1B7E3E5400D231A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5074077E1B7E3E5400D231A5 /* Images.xcassets */; };
 		507407821B7E3E5400D231A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 507407801B7E3E5400D231A5 /* LaunchScreen.xib */; };
 		5074078E1B7E3E5400D231A5 /* TrainingLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074078D1B7E3E5400D231A5 /* TrainingLogTests.swift */; };
+		5076F1D41BB7CEC300FFE87F /* TrainingData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5076F1D31BB7CEC300FFE87F /* TrainingData.csv */; settings = {ASSET_TAGS = (); }; };
+		5076F1DB1BB7D09200FFE87F /* _TrainingDateT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5076F1D61BB7D09200FFE87F /* _TrainingDateT.m */; settings = {ASSET_TAGS = (); }; };
+		5076F1DC1BB7D09200FFE87F /* _TrainingInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5076F1D81BB7D09200FFE87F /* _TrainingInfoM.m */; settings = {ASSET_TAGS = (); }; };
+		5076F1DD1BB7D09200FFE87F /* _UnitInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5076F1DA1BB7D09200FFE87F /* _UnitInfoM.m */; settings = {ASSET_TAGS = (); }; };
+		5076F1DF1BB7D5FD00FFE87F /* UnitID.csv in Resources */ = {isa = PBXBuildFile; fileRef = 5076F1DE1BB7D5FD00FFE87F /* UnitID.csv */; settings = {ASSET_TAGS = (); }; };
 		50B00DF51BA42EFE00CEB9BC /* AddTrainingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */; };
 		50EA12091BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */; settings = {ASSET_TAGS = (); }; };
 		50EA120B1BB00E75001FD8BE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EA120A1BB00E75001FD8BE /* CustomCell.swift */; settings = {ASSET_TAGS = (); }; };
 		50F125191B7E559D0026BC95 /* ForBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F125181B7E559D0026BC95 /* ForBridge.m */; };
-		50F125341B7E5D650026BC95 /* _UnitInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1252B1B7E5D650026BC95 /* _UnitInfoM.m */; };
 		50F125351B7E5D650026BC95 /* TrainingDateT.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1252D1B7E5D650026BC95 /* TrainingDateT.m */; };
 		50F125361B7E5D650026BC95 /* TrainingInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F1252F1B7E5D650026BC95 /* TrainingInfoM.m */; };
 		50F125371B7E5D650026BC95 /* UnitInfoM.m in Sources */ = {isa = PBXBuildFile; fileRef = 50F125311B7E5D650026BC95 /* UnitInfoM.m */; };
@@ -39,10 +41,6 @@
 
 /* Begin PBXFileReference section */
 		32EA459FDA3A141B16B6CDB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		501A6E301BB035AB00CA80B0 /* _TrainingInfoM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TrainingInfoM.h; sourceTree = "<group>"; };
-		501A6E311BB035AB00CA80B0 /* _TrainingInfoM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TrainingInfoM.m; sourceTree = "<group>"; };
-		501A6E331BB035BC00CA80B0 /* _TrainingDateT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TrainingDateT.h; sourceTree = "<group>"; };
-		501A6E341BB035BC00CA80B0 /* _TrainingDateT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TrainingDateT.m; sourceTree = "<group>"; };
 		5074076F1B7E3E5400D231A5 /* TrainingLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507407731B7E3E5400D231A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507407741B7E3E5400D231A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,12 +51,18 @@
 		507407871B7E3E5400D231A5 /* TrainingLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5074078C1B7E3E5400D231A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5074078D1B7E3E5400D231A5 /* TrainingLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingLogTests.swift; sourceTree = "<group>"; };
+		5076F1D31BB7CEC300FFE87F /* TrainingData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TrainingData.csv; sourceTree = "<group>"; };
+		5076F1D51BB7D09200FFE87F /* _TrainingDateT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TrainingDateT.h; sourceTree = "<group>"; };
+		5076F1D61BB7D09200FFE87F /* _TrainingDateT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TrainingDateT.m; sourceTree = "<group>"; };
+		5076F1D71BB7D09200FFE87F /* _TrainingInfoM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _TrainingInfoM.h; sourceTree = "<group>"; };
+		5076F1D81BB7D09200FFE87F /* _TrainingInfoM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _TrainingInfoM.m; sourceTree = "<group>"; };
+		5076F1D91BB7D09200FFE87F /* _UnitInfoM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UnitInfoM.h; sourceTree = "<group>"; };
+		5076F1DA1BB7D09200FFE87F /* _UnitInfoM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _UnitInfoM.m; sourceTree = "<group>"; };
+		5076F1DE1BB7D5FD00FFE87F /* UnitID.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnitID.csv; sourceTree = "<group>"; };
 		50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTrainingCountView.swift; sourceTree = "<group>"; };
 		50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "スクリーンショット 2015-09-21 19.04.58.png"; sourceTree = "<group>"; };
 		50EA120A1BB00E75001FD8BE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		50F125181B7E559D0026BC95 /* ForBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForBridge.m; sourceTree = "<group>"; };
-		50F1252A1B7E5D650026BC95 /* _UnitInfoM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _UnitInfoM.h; sourceTree = "<group>"; };
-		50F1252B1B7E5D650026BC95 /* _UnitInfoM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _UnitInfoM.m; sourceTree = "<group>"; };
 		50F1252C1B7E5D650026BC95 /* TrainingDateT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingDateT.h; sourceTree = "<group>"; };
 		50F1252D1B7E5D650026BC95 /* TrainingDateT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingDateT.m; sourceTree = "<group>"; };
 		50F1252E1B7E5D650026BC95 /* TrainingInfoM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingInfoM.h; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				50B00DF41BA42EFE00CEB9BC /* AddTrainingCountView.swift */,
 				5074077B1B7E3E5400D231A5 /* Main.storyboard */,
 				5074077E1B7E3E5400D231A5 /* Images.xcassets */,
+				5076F1DE1BB7D5FD00FFE87F /* UnitID.csv */,
+				5076F1D31BB7CEC300FFE87F /* TrainingData.csv */,
 				50EA12081BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png */,
 				507407801B7E3E5400D231A5 /* LaunchScreen.xib */,
 				507407761B7E3E5400D231A5 /* TrainingLog.xcdatamodeld */,
@@ -164,12 +170,12 @@
 		50F125091B7E54430026BC95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				501A6E331BB035BC00CA80B0 /* _TrainingDateT.h */,
-				501A6E341BB035BC00CA80B0 /* _TrainingDateT.m */,
-				501A6E301BB035AB00CA80B0 /* _TrainingInfoM.h */,
-				501A6E311BB035AB00CA80B0 /* _TrainingInfoM.m */,
-				50F1252A1B7E5D650026BC95 /* _UnitInfoM.h */,
-				50F1252B1B7E5D650026BC95 /* _UnitInfoM.m */,
+				5076F1D51BB7D09200FFE87F /* _TrainingDateT.h */,
+				5076F1D61BB7D09200FFE87F /* _TrainingDateT.m */,
+				5076F1D71BB7D09200FFE87F /* _TrainingInfoM.h */,
+				5076F1D81BB7D09200FFE87F /* _TrainingInfoM.m */,
+				5076F1D91BB7D09200FFE87F /* _UnitInfoM.h */,
+				5076F1DA1BB7D09200FFE87F /* _UnitInfoM.m */,
 				50F1252C1B7E5D650026BC95 /* TrainingDateT.h */,
 				50F1252D1B7E5D650026BC95 /* TrainingDateT.m */,
 				50F1252E1B7E5D650026BC95 /* TrainingInfoM.h */,
@@ -275,6 +281,8 @@
 			files = (
 				5074077D1B7E3E5400D231A5 /* Main.storyboard in Resources */,
 				50EA12091BB00E02001FD8BE /* スクリーンショット 2015-09-21 19.04.58.png in Resources */,
+				5076F1D41BB7CEC300FFE87F /* TrainingData.csv in Resources */,
+				5076F1DF1BB7D5FD00FFE87F /* UnitID.csv in Resources */,
 				507407821B7E3E5400D231A5 /* LaunchScreen.xib in Resources */,
 				5074077F1B7E3E5400D231A5 /* Images.xcassets in Resources */,
 			);
@@ -330,15 +338,15 @@
 				50F125351B7E5D650026BC95 /* TrainingDateT.m in Sources */,
 				50F125391B7E64900026BC95 /* MainViewController.swift in Sources */,
 				50F125191B7E559D0026BC95 /* ForBridge.m in Sources */,
-				501A6E321BB035AB00CA80B0 /* _TrainingInfoM.m in Sources */,
-				501A6E351BB035BC00CA80B0 /* _TrainingDateT.m in Sources */,
 				50B00DF51BA42EFE00CEB9BC /* AddTrainingCountView.swift in Sources */,
 				50F125361B7E5D650026BC95 /* TrainingInfoM.m in Sources */,
 				507407781B7E3E5400D231A5 /* TrainingLog.xcdatamodeld in Sources */,
 				50F125371B7E5D650026BC95 /* UnitInfoM.m in Sources */,
-				50F125341B7E5D650026BC95 /* _UnitInfoM.m in Sources */,
 				50EA120B1BB00E75001FD8BE /* CustomCell.swift in Sources */,
+				5076F1DC1BB7D09200FFE87F /* _TrainingInfoM.m in Sources */,
+				5076F1DB1BB7D09200FFE87F /* _TrainingDateT.m in Sources */,
 				507407751B7E3E5400D231A5 /* AppDelegate.swift in Sources */,
+				5076F1DD1BB7D09200FFE87F /* _UnitInfoM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

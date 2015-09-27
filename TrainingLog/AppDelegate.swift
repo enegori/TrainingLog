@@ -18,7 +18,55 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         MagicalRecord.setupCoreDataStackWithAutoMigratingSqliteStoreNamed("trainingLog.sqlite")
+        let userDefaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        var udId : String! = userDefaults.stringForKey("isInitialize")
+        if (udId != "1") {
+            // 初期データセットアップ
+            initializeTrainingData()
+            
+            // 初期データセットアップ完了
+            userDefaults.setValue("1", forKey: "isInitialize")
+        }
         return true
+    }
+    
+    // Initialize TrainingData
+    func initializeTrainingData(){
+        // Initialize UnitInfoM
+        if let csvPath = NSBundle.mainBundle().pathForResource("UnitID", ofType: "csv") {
+            var csvString: String = ""
+            do{
+                csvString = try NSString(contentsOfFile: csvPath, encoding: NSUTF8StringEncoding) as String
+            }catch {
+                print("エラーなんだが...")
+            }
+            csvString.enumerateLines { (line, stop) -> () in
+                var result = (line.componentsSeparatedByString(","))
+                var unitInfoM = UnitInfoM.MR_createEntity()
+                unitInfoM.unitName = result[0]
+                unitInfoM.unitID = result[1]
+                unitInfoM.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+            }
+        }
+        
+        // Initialize TrainingInfoM
+        if let csvPath = NSBundle.mainBundle().pathForResource("TrainingData", ofType: "csv") {
+            var csvString:String = ""
+            do{
+                csvString = try NSString(contentsOfFile: csvPath, encoding: NSUTF8StringEncoding) as String
+            }catch {
+                print("エラーなんだが...")
+            }
+            csvString.enumerateLines { (line, stop) -> () in
+                var result = (line.componentsSeparatedByString(","))
+                var trainingInfoM = TrainingInfoM.MR_createEntity()
+                trainingInfoM.imageName = result[0]
+                trainingInfoM.trainingName = result[1]
+                trainingInfoM.trainingID = result[2]
+                trainingInfoM.unitID = result[3]
+                trainingInfoM.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+            }
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

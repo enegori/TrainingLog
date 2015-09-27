@@ -23,11 +23,7 @@ extern const struct TrainingInfoMAttributes {
 
 //- (BOOL)validateImageName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* trainingID;
-
-@property (atomic) int16_t trainingIDValue;
-- (int16_t)trainingIDValue;
-- (void)setTrainingIDValue:(int16_t)value_;
+@property (nonatomic, strong) NSString* trainingID;
 
 //- (BOOL)validateTrainingID:(id*)value_ error:(NSError**)error_;
 
@@ -35,11 +31,7 @@ extern const struct TrainingInfoMAttributes {
 
 //- (BOOL)validateTrainingName:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* unitID;
-
-@property (atomic) int16_t unitIDValue;
-- (int16_t)unitIDValue;
-- (void)setUnitIDValue:(int16_t)value_;
+@property (nonatomic, strong) NSString* unitID;
 
 //- (BOOL)validateUnitID:(id*)value_ error:(NSError**)error_;
 
@@ -50,19 +42,13 @@ extern const struct TrainingInfoMAttributes {
 - (NSString*)primitiveImageName;
 - (void)setPrimitiveImageName:(NSString*)value;
 
-- (NSNumber*)primitiveTrainingID;
-- (void)setPrimitiveTrainingID:(NSNumber*)value;
-
-- (int16_t)primitiveTrainingIDValue;
-- (void)setPrimitiveTrainingIDValue:(int16_t)value_;
+- (NSString*)primitiveTrainingID;
+- (void)setPrimitiveTrainingID:(NSString*)value;
 
 - (NSString*)primitiveTrainingName;
 - (void)setPrimitiveTrainingName:(NSString*)value;
 
-- (NSNumber*)primitiveUnitID;
-- (void)setPrimitiveUnitID:(NSNumber*)value;
-
-- (int16_t)primitiveUnitIDValue;
-- (void)setPrimitiveUnitIDValue:(int16_t)value_;
+- (NSString*)primitiveUnitID;
+- (void)setPrimitiveUnitID:(NSString*)value;
 
 @end

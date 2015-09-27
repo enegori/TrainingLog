@@ -36,17 +36,6 @@ const struct TrainingInfoMAttributes TrainingInfoMAttributes = {
 + (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 
-	if ([key isEqualToString:@"trainingIDValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"trainingID"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-	if ([key isEqualToString:@"unitIDValue"]) {
-		NSSet *affectingKey = [NSSet setWithObject:@"unitID"];
-		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
-		return keyPaths;
-	}
-
 	return keyPaths;
 }
 
@@ -54,45 +43,9 @@ const struct TrainingInfoMAttributes TrainingInfoMAttributes = {
 
 @dynamic trainingID;
 
-- (int16_t)trainingIDValue {
-	NSNumber *result = [self trainingID];
-	return [result shortValue];
-}
-
-- (void)setTrainingIDValue:(int16_t)value_ {
-	[self setTrainingID:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveTrainingIDValue {
-	NSNumber *result = [self primitiveTrainingID];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveTrainingIDValue:(int16_t)value_ {
-	[self setPrimitiveTrainingID:[NSNumber numberWithShort:value_]];
-}
-
 @dynamic trainingName;
 
 @dynamic unitID;
-
-- (int16_t)unitIDValue {
-	NSNumber *result = [self unitID];
-	return [result shortValue];
-}
-
-- (void)setUnitIDValue:(int16_t)value_ {
-	[self setUnitID:[NSNumber numberWithShort:value_]];
-}
-
-- (int16_t)primitiveUnitIDValue {
-	NSNumber *result = [self primitiveUnitID];
-	return [result shortValue];
-}
-
-- (void)setPrimitiveUnitIDValue:(int16_t)value_ {
-	[self setPrimitiveUnitID:[NSNumber numberWithShort:value_]];
-}
 
 @end
 

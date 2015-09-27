@@ -7,12 +7,12 @@
     </entity>
     <entity name="TrainingInfoM" representedClassName="TrainingInfoM" syncable="YES">
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="trainingID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="trainingID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="trainingName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="unitID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unitID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="UnitInfoM" representedClassName="UnitInfoM" syncable="YES">
-        <attribute name="unitID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unitID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unitName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
