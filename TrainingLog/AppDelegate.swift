@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    // Initialize TrainingData
+    /**
+    ■ Initialize TrainingData -> アプリ初回起動時の挙動
+    csvファイルのデータを読み込み、該当する値に初期値を代入する: つまり、CoreDataに予めデータを用意しておく処理
+    */
     func initializeTrainingData(){
         // Initialize UnitInfoM
         if let csvPath = NSBundle.mainBundle().pathForResource("UnitID", ofType: "csv") {

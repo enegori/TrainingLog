@@ -32,26 +32,32 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="スクリーンショット 2015-09-21 19.04.58.png" translatesAutoresizingMaskIntoConstraints="NO" id="IiJ-Mg-ycm">
                                                     <rect key="frame" x="8" y="5" width="360" height="86"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-9i-yZ5">
-                                                    <rect key="frame" x="318" y="39" width="29" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Training Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZJ-pM-SoP">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="トレーニング名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZJ-pM-SoP">
                                                     <rect key="frame" x="22" y="39" width="200" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="khg-Zr-b4G"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVI-9i-yZ5">
+                                                    <rect key="frame" x="287" y="39" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="単位" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDq-uU-H8z">
+                                                    <rect key="frame" x="329" y="39" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="IiJ-Mg-ycm" firstAttribute="leading" secondItem="KtT-gS-GCm" secondAttribute="leadingMargin" id="29a-OU-5rP"/>
                                                 <constraint firstItem="IiJ-Mg-ycm" firstAttribute="trailing" secondItem="KtT-gS-GCm" secondAttribute="trailingMargin" constant="1" id="OrY-I9-XNB"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UVI-9i-yZ5" secondAttribute="trailing" constant="20" id="Phy-1G-t7U"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UVI-9i-yZ5" secondAttribute="trailing" constant="46" id="Phy-1G-t7U"/>
                                                 <constraint firstItem="AZJ-pM-SoP" firstAttribute="baseline" secondItem="UVI-9i-yZ5" secondAttribute="baseline" id="RdU-Sb-bq3"/>
                                                 <constraint firstItem="IiJ-Mg-ycm" firstAttribute="top" secondItem="KtT-gS-GCm" secondAttribute="topMargin" constant="-3" id="TsW-g4-F54"/>
                                                 <constraint firstItem="AZJ-pM-SoP" firstAttribute="leading" secondItem="KtT-gS-GCm" secondAttribute="leadingMargin" constant="14" id="Vlx-l9-pHz"/>
@@ -63,6 +69,7 @@
                                             <outlet property="backImg" destination="IiJ-Mg-ycm" id="2xV-U3-uAT"/>
                                             <outlet property="totalCount" destination="UVI-9i-yZ5" id="TyP-oo-Wux"/>
                                             <outlet property="trainingName" destination="AZJ-pM-SoP" id="cEZ-yI-kP8"/>
+                                            <outlet property="unitName" destination="WDq-uU-H8z" id="ERv-bC-zOL"/>
                                             <segue destination="ucl-1Q-ar0" kind="presentation" identifier="showRegister" modalTransitionStyle="crossDissolve" id="GC7-yN-KM4"/>
                                         </connections>
                                     </tableViewCell>

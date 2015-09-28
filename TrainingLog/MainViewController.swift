@@ -9,16 +9,20 @@
 import UIKit
 import Foundation
 
+/**
+TrainingMenu一覧のclass
+*/
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var mainViewC: UITableView!
     var trainingInfoList:[TrainingDataInfo] = []
+    var unitNameList:[UnitNameInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainViewC.delegate = self
         mainViewC.dataSource = self
-        //
+        
         getList()
         
         //self.mainViewC.registerNib(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
@@ -67,12 +71,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.trainingName.text = trainingInfoList[indexPath.row].trainingName
 //           cell.backImg.image = trainingInfoList[i].imageName as? UIImage
         cell.totalCount.text = String(trainingInfoList[indexPath.row].numericValue)
-            return cell
+        cell.unitName.text = unitNameList[indexPath.row].unitName
+        return cell
     }
     
+    /**
+    マスタデータを配列に格納し、各種値を紐付けてTableViewに呼び出す準備をするメソッド
+    */
     func getList(){
         let trainingDataByDate = TrainingDateT.MR_findAllSortedBy("dateInfo", ascending: true)
+        // [trainingID: numValue]
         var dict = [String:Float]()
+        /// 異なるdateInfoを持つ同じtrainingIDのnumValueを全て合算する
         for var i = 0; i < trainingDataByDate.count; i++ {
             let trainingRecord = trainingDataByDate[i]
             if dict[trainingRecord.trainingID] != nil {
@@ -82,13 +92,19 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         let keys: Array = Array(dict.keys)
-        let trainingDataList = TrainingInfoM.MR_findByAttribute("trainingName","unitID","backImg", withValue: )
+        let values: Array = Array(dict.values)
         for var i = 0; i < keys.count; i++ {
-            trainingInfoList.append(TrainingDataInfo(data:(keys[i],"a",1,"q")))
-//            trainingInfoList[i].numericValue = dict[]
-//            trainingInfoList[i].numericValue = dict[trainingRecord.trainingID]
-//            trainingInfoList[i].trainingID = trainingRecord.trainingID
+            let trainingDataList = TrainingInfoM.MR_findFirstByAttribute("trainingID", withValue: keys[i])
+            let tName = trainingDataList.trainingName
+            let imgName = trainingDataList.imageName
+            let numVal = values[i]
+            let uniID = trainingDataList.unitID
+            
+            // TODO: trainingInfoListからunitIDをサルベって対応するtrainingInfoListにappendする
+            
+            trainingInfoList.append(TrainingDataInfo(data:(tName,imgName,numVal,uniID,uniName)))
         }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

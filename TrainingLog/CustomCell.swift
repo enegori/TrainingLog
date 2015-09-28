@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 
+/**
+TableViewのCustomCell class
+*/
 class CustomCell: UITableViewCell {
     
     @IBOutlet weak var trainingName: UILabel!
     @IBOutlet weak var totalCount: UILabel!
     @IBOutlet weak var backImg: UIImageView!
+    @IBOutlet weak var unitName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,13 +38,15 @@ class CustomCell: UITableViewCell {
 
 
 class TrainingData: NSObject {
-    var trName: NSString
+    var trName: String
     var trCount: Int32
     var trBackImg: UIImage
+    var uniName: String
     
-    init(name: String, desc: String, count: Int32, img: UIImage){
+    init(name: String, desc: String, count: Int32, img: UIImage, uni: String){
         self.trName = name
         self.trCount = count
         self.trBackImg = img
+        self.uniName = uni
     }
 }

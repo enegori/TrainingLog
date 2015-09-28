@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+トレーニング回数を追加するViewのclass
+*/
 class AddTrainingCountView: UIViewController, UITextFieldDelegate {
     
     // 今日の回数
