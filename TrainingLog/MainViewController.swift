@@ -16,7 +16,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var mainViewC: UITableView!
     var trainingInfoList:[TrainingDataInfo] = []
-    var unitNameList:[UnitNameInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +68,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // cellに値を設定する
         cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
         cell.trainingName.text = trainingInfoList[indexPath.row].trainingName
-//           cell.backImg.image = trainingInfoList[i].imageName as? UIImage
+//           cell.backImg.image = trainingInfoList[indexPath.row].imageName as? UIImage
         cell.totalCount.text = String(trainingInfoList[indexPath.row].numericValue)
-        cell.unitName.text = unitNameList[indexPath.row].unitName
+        cell.unitName.text = trainingInfoList[indexPath.row].unitName
         return cell
     }
     
@@ -100,7 +99,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let numVal = values[i]
             let uniID = trainingDataList.unitID
             
-            // TODO: trainingInfoListからunitIDをサルベって対応するtrainingInfoListにappendする
+            let unitSalvage = UnitInfoM.MR_findFirstByAttribute("unitID", withValue: uniID)
+            let uniName = unitSalvage.unitName
+            print(uniName)
             
             trainingInfoList.append(TrainingDataInfo(data:(tName,imgName,numVal,uniID,uniName)))
         }
