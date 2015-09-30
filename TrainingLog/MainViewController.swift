@@ -69,17 +69,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.backgroundColor = UIColor(red: 0.169, green: 0.212, blue: 0.275, alpha: 1)
         cell.trainingName.text = trainingInfoList[indexPath.row].trainingName
 //           cell.backImg.image = trainingInfoList[indexPath.row].imageName as? UIImage
-        let numValueCheck = trainingInfoList[indexPath.row].numericValue
-        
-        // 特定のUnitIDの値以外、数字の小数点以下を非表示とする (Float型をInt型にキャストする)
-        let checkUnitID = trainingInfoList[indexPath.row].unitID
-        if checkUnitID != "100003" {
-            let numValInt = Int(numValueCheck)
-            cell.totalCount.text = String(numValInt)
-        } else {
-            cell.totalCount.text = String(numValueCheck)
-        }
-        
+        let numValueCheck:NSNumber = trainingInfoList[indexPath.row].numericValue
+        cell.totalCount.text = String(numValueCheck)        
         cell.unitName.text = trainingInfoList[indexPath.row].unitName
         return cell
     }
