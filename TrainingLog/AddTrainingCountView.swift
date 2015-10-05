@@ -59,6 +59,9 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
         navBar.pushNavigationItem(navTitle, animated: true)
         self.view.addSubview(navBar)
         
+        // Textfieldの初期値
+        numericValue.placeholder = "回数を入力"
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,27 +80,40 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
     }
     
     func registerBtn(){
-        var trainingDateT = TrainingDateT.MR_createEntity()
-        trainingDateT.dateInfo = NSDate()
-        trainingDateT.numDataValue = Float(numericValue.text!)!
-        trainingDateT.trainingID = trainingId
-        trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        if Float(numericValue.text!)! == 0 {
+            print("0以外の値を入力してください")
+        }else if let fValue:Float = Float(numericValue.text!){
+            var trainingDateT = TrainingDateT.MR_createEntity()
+            trainingDateT.dateInfo = NSDate()
+            trainingDateT.numDataValue = Float(numericValue.text!)!
+            trainingDateT.trainingID = trainingId
+            trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            print("正確な数値を入力してください")
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         numericValue.resignFirstResponder()
         return true
     }
-    /*
-    func tapGesture(sender: UITapGestureRecognizer){
-        numericValue.resignFirstResponder()
-    }
-    */
     
     func textFieldShouldBeginEditing(textfield: UITextField) -> Bool{
         txtActiveField = textfield
         return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        // 最大入力文字数の制限
+        let maxLength: Int = 6
+        var tmpStr = textField.text as NSString!
+        tmpStr = tmpStr.stringByReplacingCharactersInRange(range, withString: string)
+        if tmpStr.length < maxLength {
+            return true
+        }
+        print("入力可能な文字数を超えています")
+        return false
     }
     
     func keyboardWillShow(notification: NSNotification?){
