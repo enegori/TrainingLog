@@ -80,13 +80,12 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
     }
     
     func registerBtn(){
-        let fValue: Float = Float(numericValue.text!)!
-        if fValue == 0 {
+        if Float(numericValue.text!) == 0 {
             print("0以外の値を入力してください")
-        }else if let fvl:Float = fValue{
+        }else if let fvl:Float = Float(numericValue.text!){
             var trainingDateT = TrainingDateT.MR_createEntity()
             trainingDateT.dateInfo = NSDate()
-            trainingDateT.numDataValue = fValue
+            trainingDateT.numDataValue = fvl
             trainingDateT.trainingID = trainingId
             trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
             self.dismissViewControllerAnimated(true, completion: nil)
