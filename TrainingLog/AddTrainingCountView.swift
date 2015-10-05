@@ -60,7 +60,7 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
         self.view.addSubview(navBar)
         
         // Textfieldの初期値
-        numericValue.placeholder = "回数を入力"
+        numericValue.placeholder = "数値を入力"
         
     }
     
@@ -85,7 +85,7 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
         }else if let fValue:Float = Float(numericValue.text!){
             var trainingDateT = TrainingDateT.MR_createEntity()
             trainingDateT.dateInfo = NSDate()
-            trainingDateT.numDataValue = Float(numericValue.text!)!
+            trainingDateT.numDataValue = fValue
             trainingDateT.trainingID = trainingId
             trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
             self.dismissViewControllerAnimated(true, completion: nil)
