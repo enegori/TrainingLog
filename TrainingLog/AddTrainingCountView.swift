@@ -80,15 +80,17 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
     }
     
     func registerBtn(){
-        if Float(numericValue.text!) == 0 {
-            print("0以外の値を入力してください")
-        }else if let fvl:Float = Float(numericValue.text!){
-            var trainingDateT = TrainingDateT.MR_createEntity()
-            trainingDateT.dateInfo = NSDate()
-            trainingDateT.numDataValue = fvl
-            trainingDateT.trainingID = trainingId
-            trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
-            self.dismissViewControllerAnimated(true, completion: nil)
+        if let fvl:Float = Float(numericValue.text!){
+            if fvl == 0 {
+                print("0以外の値を入力してください")
+            } else {
+                var trainingDateT = TrainingDateT.MR_createEntity()
+                trainingDateT.dateInfo = NSDate()
+                trainingDateT.numDataValue = fvl
+                trainingDateT.trainingID = trainingId
+                trainingDateT.managedObjectContext?.MR_saveToPersistentStoreAndWait()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         } else {
             print("数値を入力してください")
         }
@@ -109,7 +111,7 @@ class AddTrainingCountView: UIViewController, UITextFieldDelegate {
         let maxLength: Int = 6
         var tmpStr = textField.text as NSString!
         tmpStr = tmpStr.stringByReplacingCharactersInRange(range, withString: string)
-        if tmpStr.length < maxLength {
+        if tmpStr.length <= maxLength {
             return true
         }
         print("入力可能な文字数を超えています")
